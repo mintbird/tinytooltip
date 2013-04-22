@@ -45,6 +45,9 @@
 			tip.css('top', pos.top + me.outerHeight());
 
 			me.bind( (options.hover ? 'mouseover ' : '') + 'showtooltip', function() {
+				// position the tooltip beside the parent
+				tip.css('left', pos.left + (me.outerWidth()/2) - (tip.outerWidth()/2));
+				tip.css('top', pos.top + me.outerHeight());
 				tip.show().animate({opacity: 1}, 200);
 			});
 			me.bind( (options.hover ? 'mouseout ' : '') + 'hidetooltip', function() {
